@@ -1,1 +1,46 @@
-myenv
+#Virtual Environments
+
+cred_mod_env/
+venv/
+env/
+.env/
+
+#Python and Jupyter Cache
+
+pycache/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+
+#Trained Models (Do not push large binary files to GitHub)
+
+*.pkl
+*.joblib
+*.h5
+*.model
+
+#Data Files (Keep your repository lightweight)
+
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.json
+*.sqlite3
+*.db
+
+#Streamlit and Environment Secrets
+
+.env
+.streamlit/secrets.toml
+secrets.toml
+
+#VS Code Settings
+
+.vscode/
+
+#OS Specific Files
+
+.DS_Store
+Thumbs.db
