@@ -1,12 +1,18 @@
-FROM python:3.10
+# Use an official lightweight Python image
+FROM python:3.14-slim
 
+# Set the working directory inside the container
 WORKDIR /app
 
-COPY . /app
+# Copy the requirements file and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN python -m pip install --upgrade pip
-RUN pip install -r requirements.txt
+# Copy the rest of the application code and the model file
+COPY . .
 
-EXPOSE 8000
+# Expose the port Streamlit runs on
+EXPOSE 8501
 
-CMD ["python", "app.py"]
+# Command to run the application
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
